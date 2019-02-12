@@ -1,6 +1,0 @@
-# DataAnalytics
-## Book
-
-## Code
-
-## Others
