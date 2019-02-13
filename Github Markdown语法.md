@@ -27,6 +27,7 @@ GitHub的markdown语法在标准的markdown语法基础上做了扩充，称之�
 * [表格](#表格) 
 * [表情](#表情)
 * [diff语法](#diff语法)
+* [参考引用](#参考引用)
 
 
 |样式|关键字|语法|展示|
@@ -334,8 +335,8 @@ string &operator+(const string& A,const string& B) //cpp
 | ---- | ---- |
 |![baidu][baidu-logo] | 百度|
 
-表情
-----------
+## 表情
+
 Github的Markdown语法支持添加emoji表情，输入不同的符号码（两个冒号包围的字符）可以显示出不同的表情。
 
 比如`:blush:`，可以显示:blush:。
@@ -358,3 +359,6 @@ GFM中可以显示的展示diff效果。使用绿色表示新增，红色表示�
 + 鸟宿池边树，僧敲月下门
 - 鸟宿池边树，僧推月下门
 ```
+## 参考引用
+https://github.com/guodongxiaren/README
+
