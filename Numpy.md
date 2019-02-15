@@ -58,5 +58,10 @@ step默认为1
 ## 数组变形
 
 
+``` python
+ndarray.reshape()
+c1=np.array([[1,2,3]]),行向量
+c2=np.array([1,2,3])，列向量
 
+```
 ## 数组拼接和分裂
