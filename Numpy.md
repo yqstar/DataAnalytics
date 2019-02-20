@@ -38,9 +38,7 @@ ndarray[索引元组]
 ndarray[start:stop:step]
 其中:
 切片符号为":"
-start默认为0
-stop默认为维度大小
-step默认为1
+start默认为0,stop默认为维度大小,step默认为1
 ```
 注：Numpy数组切片：值的视图，切片视图的操作会影响数组，可通过copy()方法，获取数组的副本。
    Python列表切片：值的副本，切片副本的操作不会影响列表。
