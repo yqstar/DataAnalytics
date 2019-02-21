@@ -1,3 +1,5 @@
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+
 # 蒙特卡罗方法(Monte Carlo Method)
 
 ## 概述
@@ -13,6 +15,8 @@
 ## 实例
 
 * 定积分求解
+
+$\\[\int_{0}^{1} x^{2}dx\]$
 
 * π求解
 
