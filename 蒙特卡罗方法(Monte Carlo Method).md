@@ -16,8 +16,6 @@
 
 * 定积分求解
 
-$\\[\int_{0}^{1} x^{2}dx\]$
-
 * π求解
 
 * Black-Scholes-Merton(BSM)模型
