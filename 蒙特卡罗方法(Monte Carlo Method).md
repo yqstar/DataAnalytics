@@ -2,7 +2,7 @@
 
 # 蒙特卡罗方法(Monte Carlo Method)
 
-$$\[\int_{a}^{b} x^2dx\]$$
+$$\sum_{i=0}^N{X_i}$$
 
 ## 概述
 
