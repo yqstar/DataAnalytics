@@ -14,6 +14,8 @@
 
 * 定积分求解
 
+<img src="https://latex.codecogs.com/gif.latex?\int_{a}^{b}&space;x^2dx" title="\int_{a}^{b} x^2dx" />
+
 * π求解
 
 * Black-Scholes-Merton(BSM)模型
