@@ -2,7 +2,7 @@
 
 ## 自动补全配置
 
-首先安装 nbextensions
+首先安装 **nbextensions**
 ```
 pip install jupyter_contrib_nbextensions
 ```
