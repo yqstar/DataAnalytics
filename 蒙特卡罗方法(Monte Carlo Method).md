@@ -2,8 +2,6 @@
 
 # 蒙特卡罗方法(Monte Carlo Method)
 
-$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
-
 ## 概述
 
 蒙特卡罗方法也称统计模拟方法，是一种以概率统计理论为指导的数值计算方法。是指使用随机数或更常见的伪随机数来解决很多计算问题的方法。
@@ -18,24 +16,10 @@ $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
 
 * 定积分求解
 
-<img src="https://latex.codecogs.com/gif.latex?\int_{a}^{b}&space;x^2dx" title="\int_{a}^{b} x^2dx" />
-
 * π求解
 
 * Black-Scholes-Merton(BSM)模型
 
-
-# 机器学习-如何在github上写数学公式
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-居中格式: 
-$$xxx$$
-$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
-靠左格式: 
-\\(xxx\\)
-\\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)
-测试
-$$\frac{7x+5}{1+y^2}$$
-\\(l(x_i) = - \log_2 P(x_i)\\)
 
 
 
