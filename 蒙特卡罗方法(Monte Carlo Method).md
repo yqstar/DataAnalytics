@@ -12,13 +12,11 @@
 
 ## 实例
 
-* 1、定积分求解
+* 定积分求解
 
+* π求解
 
-* 2、Black-Scholes-Merton(BSM)模型
-
-
-* 3、π求解
+* Black-Scholes-Merton(BSM)模型
 
 
 
