@@ -13,6 +13,7 @@
 ## 实例
 
 * 定积分求解
+![MC](DataAnalytics/Picture)
 
 * π求解
 
