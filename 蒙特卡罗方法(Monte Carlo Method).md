@@ -13,7 +13,6 @@
 ## 实例
 
 * 定积分求解
-![MC](https://github.com/yqstar/DataAnalytics/blob/master/Picture/MCIntegration01.png)
 
 * π求解
 
