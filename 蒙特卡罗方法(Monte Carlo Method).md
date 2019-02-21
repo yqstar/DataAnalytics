@@ -1,4 +1,4 @@
-# 蒙特卡罗方法(Monte Carlo method)
+# 蒙特卡罗方法(Monte Carlo Method)
 
 ## 蒙特卡罗方法概述
 
