@@ -12,6 +12,19 @@
 ## 实例
 
 * 定积分求解
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+行内公式
+x^{2}+y^{2}=z^{2}
+
+行间公式
+x^{2}+y^{2}=z^{2}
+
+带编号的公式
+\begin{equation} a^2+b^2=c^2 \end{equation}
+
+
+
 
 * π求解
 
