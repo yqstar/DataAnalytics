@@ -13,6 +13,8 @@
 
 * 定积分求解
 
+x^{3}
+
 * π求解
 
 * Black-Scholes-Merton(BSM)模型
