@@ -1,35 +1,35 @@
 
 # Github的Markdown语法
-GitHub的markdown语法在标准的markdown语法基础上做了扩充，称之为GitHub Flavored Markdown，简称GFM。GFM在GitHub上有广泛应用，除了README文件外，issues和wiki均支持markdown语法。
+GitHub的markdown语法在标准markdown语法基础上做了扩充，称之为GitHub Flavored Markdown，简称GFM。GFM在GitHub上有广泛应用，除了README文件外，issues和wiki均支持markdown语法。
 ## 目录
-* [标题](#标题)
-* [文本](#文本)
+* [1、标题](#1、标题)
+* [2、文本](#2、文本)
     * 普通文本
     * 单行文本
     * 多行文本
     * 文字高亮
     * 斜体、粗体、删除线
-* [图片](#图片)
+* [3、图片](#3、图片)
     * 来源于网络的图片
     * GitHub仓库中的图片
-* [链接](#链接) 
+* [4、链接](#4、链接) 
     * 文字超链接
-        *  链接外部URL
-        *  链接本仓库里的URL
-    *  锚点
+        * 链接外部URL
+        * 链接本仓库里的URL
+    * [锚点](#锚点)
     * [图片链接](#图片链接)
-* [列表](#列表)
+* [5、列表](#5、列表)
     * 无序列表
     * 有序列表
     * 复选框列表
-* [块引用](#块引用)
-* [代码高亮](#代码高亮)
-* [表格](#表格) 
-* [表情](#表情)
-* [diff语法](#diff语法)
-* [参考引用](#参考引用)
+* [6、块引用](#6、块引用)
+* [7、代码高亮](#7、代码高亮)
+* [8、表格](#8、表格) 
+* [9、表情](#9、表情)
+* [10、diff语法](#10、diff语法)
+* [11、参考引用](#11、参考引用)
 
-## 标题
+## 1、标题
 
 |样式|关键字|语法|
 |----|----|----|
@@ -42,7 +42,7 @@ GitHub的markdown语法在标准的markdown语法基础上做了扩充，称之�
 
 注：标题的基本写法中文本和关键字需独立占一行，一二级标题的特殊写法中文本和关键字需要占据两行。
 
-## 文本
+## 2、文本
 
 ### 普通文本
 这是一段普通的文本
@@ -88,7 +88,7 @@ GitHub的markdown语法在标准的markdown语法基础上做了扩充，称之�
 
 
 
-## 图片
+## 3、图片
 
 基本格式：
 ```
@@ -114,7 +114,7 @@ https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
 [foryou]:https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
 ```
 
-## 链接
+## 4、链接
 
 ### 链接外部URL
 
@@ -151,7 +151,7 @@ https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
 注意，此时鼠标悬停时显示的文字是图片的title，而非链接本身的title了。
 > 本文URL标识符都放置于文末
 
-### 锚点
+### 5、锚点
 其实呢，每一个标题都是一个锚点，和HTML的锚点（`#`）类似，比如我们 
 
 |语法|效果|
@@ -161,7 +161,7 @@ https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
 不过要注意，标题中的英文字母都被转化为**小写字母**了。
 > 以前GitHub对中文支持的不好，所以中文标题不能正确识别为锚点，但是现在已经没问题啦！
 
-## 列表
+## 6、列表
 
 ### 无序列表
 #### 语法
@@ -245,7 +245,7 @@ https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
 > Tip:
 >> 在GitHub的**issue**中使用该语法是可以实时点击复选框来勾选或解除勾选的，而无需修改issue原文。
 
-## 块引用
+## 7、块引用
 
 ### 常用于引用文本
 #### 文本摘自《深入理解计算机系统》P27
@@ -270,7 +270,7 @@ https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif
 >>>> 平衡二叉树
 >>>>> 满二叉树
 
-代码高亮
+8、代码高亮
 ----------
 
 ### 语法
@@ -292,8 +292,7 @@ document.getElementById("myH1").innerHTML="Welcome to my Homepage"; //javascipt
 ```cpp
 string &operator+(const string& A,const string& B) //cpp
 ```
-表格
---------
+## 8、表格
 
 表头1  | 表头2|
 --------- | --------|
@@ -330,7 +329,7 @@ string &operator+(const string& A,const string& B) //cpp
 | ---- | ---- |
 |![baidu][baidu-logo] | 百度|
 
-## 表情
+## 9、表情
 
 Github的Markdown语法支持添加emoji表情，输入不同的符号码（两个冒号包围的字符）可以显示出不同的表情。
 
@@ -340,7 +339,7 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 
 但是这个网页每次都打开**奇慢**。。所以我整理到了本repo中，大家可以直接在此查看[emoji](./emoji.md)。
 
-diff语法
+## 10、diff语法
 ---------
 版本控制的系统中都少不了diff的功能，即展示一个文件内容的增加与删除。
 GFM中可以显示的展示diff效果。使用绿色表示新增，红色表示删除。
@@ -354,6 +353,5 @@ GFM中可以显示的展示diff效果。使用绿色表示新增，红色表示�
 + 鸟宿池边树，僧敲月下门
 - 鸟宿池边树，僧推月下门
 ```
-## 参考引用
+## 11、参考引用
 https://github.com/guodongxiaren/README
-
