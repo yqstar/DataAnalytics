@@ -12,7 +12,7 @@
 ## 实例
 
 * 定积分![first equation](https://latex.codecogs.com/gif.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cint_%7B0%7D%5E%7B1%7Dx%5E%7B2%7Ddx)求解
-
+思路：该红色区域在一个1×1的正方形里面。使用蒙特卡洛方法，随机在这个正方形里面产生大量随机点（数量为n），计算有多少点（数量为count）落在红色区域内（判断条件为y<x^2），count/n就是所要求的积分值，也即红色区域的面积。
 ```
 import numpy as np
 import matplotlib.pyplot as plt
@@ -22,9 +22,6 @@ plt.plot(x, y)
 plt.fill_between(x, y, where=(y > 0), color='red', alpha=0.5)
 plt.show()
 ```
-
-思路：该红色区域在一个1×1的正方形里面。使用蒙特卡洛方法，随机在这个正方形里面产生大量随机点（数量为n），计算有多少点（数量为count）落在红色区域内（判断条件为y<x^2），count/n就是所要求的积分值，也即红色区域的面积。
-
 ``` python
 import random
 
@@ -52,9 +49,6 @@ integral()
 实际定积分结果：0.333333
 两个结果的误差还是较小的。
 ```
-
-
-
 
 * π求解
 
@@ -88,13 +82,6 @@ calpai()
 实际定积分结果：3.14159
 两个结果的误差还是较小的。
 ```
-
-
-
-* Black-Scholes-Merton(BSM)模型
-
-
-
 
 ## 参考
 * https://blog.csdn.net/bitcarmanlee/article/details/82716641
