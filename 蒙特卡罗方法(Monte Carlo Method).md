@@ -11,9 +11,7 @@
 
 ## 实例
 
-* 定积分求解
-
-$$x^{3}$$
+* 定积分![](https://latex.codecogs.com/gif.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cint_%7B0%7D%5E%7B1%7Dx%5E%7B2%7Ddx)求解
 
 * π求解
 
