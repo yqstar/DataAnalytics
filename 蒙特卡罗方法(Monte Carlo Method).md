@@ -11,9 +11,85 @@
 
 ## 实例
 
-* 定积分![](https://latex.codecogs.com/gif.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cint_%7B0%7D%5E%7B1%7Dx%5E%7B2%7Ddx)求解
+* 定积分![first equation](https://latex.codecogs.com/gif.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cint_%7B0%7D%5E%7B1%7Dx%5E%7B2%7Ddx)求解
+
+```
+import numpy as np
+import matplotlib.pyplot as plt
+x = np.linspace(0, 1, 1000)
+y = x ** 2
+plt.plot(x, y)
+plt.fill_between(x, y, where=(y > 0), color='red', alpha=0.5)
+plt.show()
+```
+
+思路：该红色区域在一个1×1的正方形里面。使用蒙特卡洛方法，随机在这个正方形里面产生大量随机点（数量为n），计算有多少点（数量为count）落在红色区域内（判断条件为y<x^2），count/n就是所要求的积分值，也即红色区域的面积。
+
+``` python
+import random
+
+def integral():
+    n = 1000000
+    x_min, x_max = 0.0, 1.0
+    y_min, y_max = 0.0, 1.0
+
+    count = 0
+    for i in range(0, n):
+        # random.uniform(x, y)方法将随机生成一个实数，它在[x,y]范围内。
+        x = random.uniform(x_min, x_max)
+        y = random.uniform(y_min, y_max)
+        # x*x > y，表示该点位于曲线的下面。所求的积分值即为曲线下方的面积与正方形面积的比。
+        if x*x > y:
+            count += 1
+
+    integral_value = count / float(n)
+    print (integral_value)
+    
+integral()
+```
+```
+蒙特卡罗方法结果：0.333613
+实际定积分结果：0.333333
+两个结果的误差还是较小的。
+```
+
+
+
 
 * π求解
+
+思路：
+正方形内部有一个相切的圆，它们的面积之比是π/4。现在，在这个正方形内部，随机产生n个点，计算它们与中心点的距离，并且判断是否落在圆的内部。若这些点均匀分布，则圆周率 pi=4 * count/n, 其中count表示落到圆内投点数 n:表示总的投点数。
+
+```
+import random
+
+def calpai():
+    n = 1000000
+    r = 1.0
+    a, b = (0.0, 0.0)
+    x_neg, x_pos = a - r, a + r
+    y_neg, y_pos = b - r, b + r
+
+    count = 0
+    for i in range(0, n):
+        x = random.uniform(x_neg, x_pos)
+        y = random.uniform(y_neg, y_pos)
+        if x*x + y*y <= 1.0:
+            count += 1
+
+    print (count / float(n)* 4) 
+    
+calpai()
+```
+
+```
+蒙特卡罗方法结果：3.14056
+实际定积分结果：3.14159
+两个结果的误差还是较小的。
+```
+
+
 
 * Black-Scholes-Merton(BSM)模型
 
@@ -23,5 +99,4 @@
 ## 参考
 * https://blog.csdn.net/bitcarmanlee/article/details/82716641
 * https://blog.csdn.net/u014281392/article/details/76202493
-
-![image](https://github.com/yqstar/DataAnalytics/blob/master/Picture/MCIntegration01.png)
+* https://blog.csdn.net/u014281392/article/details/76285280
