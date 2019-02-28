@@ -13,7 +13,7 @@
 
 * 定积分![first equation](https://latex.codecogs.com/gif.latex?%5Cinline%20%5Cdpi%7B100%7D%20%5Cint_%7B0%7D%5E%7B1%7Dx%5E%7B2%7Ddx)求解
 思路：该红色区域在一个1×1的正方形里面。使用蒙特卡洛方法，随机在这个正方形里面产生大量随机点（数量为n），计算有多少点（数量为count）落在红色区域内（判断条件为y<x^2），count/n就是所要求的积分值，也即红色区域的面积。
-```
+``` python
 import numpy as np
 import matplotlib.pyplot as plt
 x = np.linspace(0, 1, 1000)
@@ -55,7 +55,7 @@ integral()
 思路：
 正方形内部有一个相切的圆，它们的面积之比是π/4。现在，在这个正方形内部，随机产生n个点，计算它们与中心点的距离，并且判断是否落在圆的内部。若这些点均匀分布，则圆周率 pi=4 * count/n, 其中count表示落到圆内投点数 n:表示总的投点数。
 
-```
+``` python
 import random
 
 def calpai():
