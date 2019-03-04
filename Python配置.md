@@ -5,7 +5,7 @@
 * [Pypi镜像配置](#Pypi镜像配置)
     * Pypi镜像使用
     * 常见的Pypi镜像源
-* [Jupyter Notebook配置](#Jupyter Notebook配置)
+* [JupyterNotebook配置](#JupyterNotebook配置)
     * 自动补全配置
 
 ## Fbprophet配置
@@ -41,7 +41,7 @@ v2ex http://pypi.v2ex.com/simple
 清华大学 https://pypi.tuna.tsinghua.edu.cn/simple/
 ```
 
-## Jupyter Notebook配置
+## JupyterNotebook配置
 
 ### 自动补全配置
 
