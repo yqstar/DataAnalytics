@@ -1,18 +1,12 @@
 # Python配置
 
 ## 目录
-* [1、标题](#Fbprophet配置)
-* [2、文本](#Pypi镜像配置)
-    * 普通文本
-    * 单行文本
-    * 多行文本
-    * 文字高亮
-    * 斜体、粗体、删除线
-* [3、图片](#Jupyter Notebook配置)
-    * 来源于网络的图片
-    * GitHub仓库中的图片
-
-
+* [Fbprophet配置](#Fbprophet配置)
+* [Pypi镜像配置](#Pypi镜像配置)
+    * Pypi镜像使用
+    * 常见的Pypi镜像源
+* [Jupyter Notebook配置](#Jupyter Notebook配置)
+    * 自动补全配置
 
 ## Fbprophet配置
 
