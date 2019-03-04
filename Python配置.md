@@ -8,8 +8,8 @@
 * [JupyterNotebook配置](#JupyterNotebook配置)
     * 自动补全配置
 
-## Fbprophet配置
 
+## Fbprophet配置
 
 ## Pypi镜像配置
 
