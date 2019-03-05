@@ -11,9 +11,9 @@
 
 ## Fbprophet配置
 
-## Pypi镜像配置
+## PyPi镜像配置
 
-### Pypi镜像使用
+### PyPi镜像使用
 
 * 临时使用
 
@@ -29,7 +29,7 @@ pip install pip -U
 pip config set global.index-url mirror-url
 ```
 
-### 常见的Pypi镜像源
+### 常见PyPi源
 
 |Mirror|url|
 |------|---|
