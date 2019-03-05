@@ -21,7 +21,7 @@
 pip install -i mirror-url some-package
 ```
 
-注意：`mirror-url`为镜像的链接，其中： `simple` 不能少, 是 `https` 而不是 `http`。
+注意：`mirror-url`为镜像的链接，其中：`simple` 不能少, 是 `https` 而不是 `http`。
 
 * 设为默认
 ``` Python
