@@ -21,3 +21,49 @@ Full Out Join：两边都筛选出来，匹配能匹配的，不能匹配的用N
 Cross Join：列出两边所有组合，也称为笛卡尔集 A×B 
 Left Join:以左边的表为主表，列出主表所有记录，匹配能匹配的，不能匹配的用 NULL列出 
 Right Join：以右边的表为主表，列出主表所有记录，匹配能匹配的，不匹配的用NULL列出
+
+
+## 常见的JOIN操作
+
+``` sql
+-- 语法：create database database_name；作用：新建数据库
+create database join_test;
+use join_test;
+
+create table Table_A (PK int,Value varchar(255));
+insert into Table_A values(1,'both ab');
+insert into Table_A values(2,'only a');
+
+create table Table_B(PK int,Value varchar(255));
+insert into Table_B values(1,'both ab');
+insert into Table_B values(3,'only b');
+```
+
+* INNER JOIN
+
+INNER JOIN 一般被译作内连接。内连接查询能将左表（表 A）和右表（表 B）中能关联起来的数据连接后返回。
+
+  * 查询示例
+  ``` sql
+  SELECT A.PK AS A_PK, B.PK AS B_PK, A.Value AS A_Value, B.Value AS B_Value
+  FROM Table_A A INNER JOIN Table_B B
+  ON A.PK = B.PK;
+  ```
+  * 查询结果
+  ```
+    +------+------+---------+---------+
+    | A_PK | B_PK | A_Value | B_Value |
+    +------+------+---------+---------+
+    |    1 |    1 | both ab | both ab |
+    +------+------+---------+---------+
+    1 row in set (0.07 sec)
+  ```
+   
+
+
+## 更多的JOIN用法
+
+
+
+## 参考
+https://blog.csdn.net/moakun/article/details/80429267
