@@ -1,8 +1,8 @@
 # SQL学习
 
-SQL练习网站：[SQLZOO](https://sqlzoo.net/wiki/SQL_Tutorial)
+SQL学习网站：[SQLZOO](https://sqlzoo.net/wiki/SQL_Tutorial)
 
-## SQL JOIN练习
+## SQL JOIN用法
 
 SQL join 用于根据两个或多个表中的列之间的关系，从这些表中查询数据。
 
@@ -26,17 +26,44 @@ Right Join：以右边的表为主表，列出主表所有记录，匹配能匹�
 ## 常见的JOIN操作
 
 ``` sql
--- 语法：create database database_name；作用：新建数据库
+-- 语法：create database database_name;
+-- 作用：新建数据库
 create database join_test;
 use join_test;
 
+-- 语法：create table table_name (field_name1 data_type1,field_name2 data_type2,...);
+-- 作用：新建数据表
 create table Table_A (PK int,Value varchar(255));
+create table Table_B(PK int,Value varchar(255));
+
+-- 语法：insert into table_name values(field_value1,field_value2,...);
+-- 作用：插入数据
 insert into Table_A values(1,'both ab');
 insert into Table_A values(2,'only a');
-
-create table Table_B(PK int,Value varchar(255));
 insert into Table_B values(1,'both ab');
 insert into Table_B values(3,'only b');
+```
+
+``` sql
+select * from Table_A;
++------+---------+
+| PK   | Value   |
++------+---------+
+|    1 | both ab |
+|    2 | only a  |
++------+---------+
+2 rows in set (0.11 sec)
+```
+
+``` sql
+select * from Table_A;
++------+---------+
+| PK   | Value   |
++------+---------+
+|    1 | both ab |
+|    2 | only a  |
++------+---------+
+2 rows in set (0.00 sec)
 ```
 
 * INNER JOIN
