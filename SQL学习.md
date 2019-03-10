@@ -61,28 +61,31 @@ select * from Table_A;
 SQL中JOIN用于根据两个或多个表中的列之间的关系，从这些表中查询数据。具体包括：`Inner Join`, `Full Out Join`, `Cross Join`, `Left Join`, `Right Join`等用法。具体区别如下：
 
 `Cross Join`：列出两边所有组合，也称为笛卡尔集 A×B。
-`Inner Join`：筛选两边都有的记录。
-`Left Join`:以左边的表为主表，列出主表所有记录，匹配能匹配的，不能匹配的用 NULL列出。
-`Right Join`：以右边的表为主表，列出主表所有记录，匹配能匹配的，不匹配的用NULL列出。
-`Full Out Join`：两边都筛选出来，匹配能匹配的，不能匹配的用NULL列出。
 
+`Inner Join`：筛选两边都有的记录。
+
+`Left Join`:以左边的表为主表，列出主表所有记录，匹配能匹配的，不能匹配的用 NULL列出。
+
+`Right Join`：以右边的表为主表，列出主表所有记录，匹配能匹配的，不匹配的用NULL列出。
+
+`Full Out Join`：两边都筛选出来，匹配能匹配的，不能匹配的用NULL列出。
 
 ## 常见的JOIN操作
 
-
-
-
 * INNER JOIN
 
-INNER JOIN 一般被译作内连接。内连接查询能将左表（表 A）和右表（表 B）中能关联起来的数据连接后返回。
+   INNER JOIN 一般被译作内连接。内连接查询能将左表（表 A）和右表（表 B）中能关联起来的数据连接后返回。
 
    * 查询示例
+   
   ``` sql
   SELECT A.PK AS A_PK, B.PK AS B_PK, A.Value AS A_Value, B.Value AS B_Value
   FROM Table_A A INNER JOIN Table_B B
   ON A.PK = B.PK;
   ```
+  
   * 查询结果
+  
   ```
     +------+------+---------+---------+
     | A_PK | B_PK | A_Value | B_Value |
