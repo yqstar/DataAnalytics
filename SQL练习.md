@@ -43,7 +43,7 @@ insert into Table_B values(3,'only b');
 
 INNER JOIN 一般被译作内连接。内连接查询能将左表（表 A）和右表（表 B）中能关联起来的数据连接后返回。
 
-  * 查询示例
+   * 查询示例
   ``` sql
   SELECT A.PK AS A_PK, B.PK AS B_PK, A.Value AS A_Value, B.Value AS B_Value
   FROM Table_A A INNER JOIN Table_B B
