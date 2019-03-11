@@ -1,6 +1,6 @@
 # SQL学习
 
-SQL在线测试学习网站：[SQLZOO](https://sqlzoo.net/wiki/SQL_Tutorial)和[W3School-SQL](http://www.w3school.com.cn/sql/index.asp)
+SQL在线测试学习网站： [SQLZOO](https://sqlzoo.net/wiki/SQL_Tutorial) 和 [W3School-SQL](http://www.w3school.com.cn/sql/index.asp)
 
 ## SQL数据准备
 
