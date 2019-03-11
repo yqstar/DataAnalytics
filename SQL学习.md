@@ -156,14 +156,6 @@ SELECT A.PK AS A_PK, B.PK AS B_PK, A.Value AS A_Value, B.Value AS B_Value FROM T
 3 rows in set (0.16 sec)
  
  ```
-   
-   
-
-
-## 更多的JOIN用法
-
-
-
 ## 参考
 * https://blog.csdn.net/moakun/article/details/80429267
 * https://blog.csdn.net/ys_code/article/details/79497294
