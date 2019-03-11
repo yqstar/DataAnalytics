@@ -26,35 +26,29 @@ insert into Table_B values(3,'only b');
 ```
 
 ``` sql
--- 语法：select * from table_name;
--- 作用：查询表中所有数据
-select * from Table_A;
+-- 语法：select field_name1 (as) field_name1_alias, field_name2 (as) field_name2_alias from table_name (as) table_name_alias;
+-- 作用：查询表中的某几个字段的数据记录，并对表名和字段名设置别名，其中别名（Alias）的关键字为as,一般可以省略。
+select A.PK as A_PK, A.Value as A_Value from Table_A as A;
+select B.PK B_PK, B.Value B_Value from Table_B B;
 
 -- 查询结果及具体内容
 +------+---------+
-| PK   | Value   |
-+------+---------+
-|    1 | both ab |
-|    2 | only a  |
-+------+---------+
-2 rows in set (0.11 sec)
-```
-
-``` sql
--- 语法：select * from table_name;
--- 作用：查询表中所有数据
-select * from Table_A;
-
--- 查询结果及具体内容
-+------+---------+
-| PK   | Value   |
+| A_PK | A_Value |
 +------+---------+
 |    1 | both ab |
 |    2 | only a  |
 +------+---------+
 2 rows in set (0.00 sec)
-```
 
++------+---------+
+| B_PK | B_Value |
++------+---------+
+|    1 | both ab |
+|    3 | only b  |
++------+---------+
+2 rows in set (0.00 sec)
+
+```
 
 ## SQL中JOIN用法概述
 
@@ -74,26 +68,44 @@ SQL中JOIN用于根据两个或多个表中的列之间的关系，从这些表�
 
 * INNER JOIN
 
-   INNER JOIN 一般被译作内连接。内连接查询能将左表（表 A）和右表（表 B）中能关联起来的数据连接后返回。
-
-   * 查询示例
+   INNER JOIN 一般被译作内连接。内连接查询能将左表（表 A）和右表（表 B）中能关联起来的数据连接后返回。查询示例如下。
    
   ``` sql
+  -- 查询语句
   SELECT A.PK AS A_PK, B.PK AS B_PK, A.Value AS A_Value, B.Value AS B_Value
   FROM Table_A A INNER JOIN Table_B B
   ON A.PK = B.PK;
-  ```
   
-  * 查询结果
-  
+  -- 查询结果
+  +------+------+---------+---------+
+  | A_PK | B_PK | A_Value | B_Value |
+  +------+------+---------+---------+
+  |    1 |    1 | both ab | both ab |
+  +------+------+---------+---------+
+  1 row in set (0.07 sec)
   ```
-    +------+------+---------+---------+
-    | A_PK | B_PK | A_Value | B_Value |
-    +------+------+---------+---------+
-    |    1 |    1 | both ab | both ab |
-    +------+------+---------+---------+
-    1 row in set (0.07 sec)
-  ```
+ 
+ * LEFT JOIN
+ 
+   LEFT JOIN 一般被译作左连接，也写作 LEFT OUTER JOIN。左连接查询会返回左表（表 A）中所有记录，不管右表（表 B）中有没有关联的数据。在右表中找到的关联数据列也会被一起返回。
+   
+   ```sql
+   -- 查询语句
+   SELECT A.PK AS A_PK, B.PK AS B_PK, A.Value AS A_Value, B.Value AS B_Value
+   FROM Table_A A LEFT JOIN Table_B B
+   ON A.PK = B.PK;
+
+   -- 查询结果
+   +------+------+---------+---------+
+   | A_PK | B_PK | A_Value | B_Value |
+   +------+------+---------+---------+
+   |    1 |    1 | both ab | both ab |
+   |    2 | NULL | only a  | NULL    |
+   +------+------+---------+---------+
+   2 rows in set (0.02 sec)
+   ```
+   
+   
    
 
 
