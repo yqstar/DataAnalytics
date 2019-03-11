@@ -181,6 +181,7 @@ SELECT A.PK AS A_PK, B.PK AS B_PK, A.Value AS A_Value, B.Value AS B_Value FROM T
 * https://blog.csdn.net/moakun/article/details/80429267
 * https://blog.csdn.net/ys_code/article/details/79497294
 * https://blog.csdn.net/ys_code/article/details/79497294
+* https://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins
 
 ![SQL_JOIN图列](https://img-blog.csdnimg.cn/20181107162131341.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM4MDYzMTcy,size_16,color_FFFFFF,t_70)
 
