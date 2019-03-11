@@ -4,7 +4,7 @@ SQL学习网站：[SQLZOO](https://sqlzoo.net/wiki/SQL_Tutorial)
 
 ## SQL演示数据准备
 
-新建数据库`join_test`，在`join_test`中新建两个数据表，分别是`Table_A`和`Table_B`，并插入两条数据。具体操作如下：
+在`MySQL`新建数据库`join_test`，在`join_test`中新建两个数据表，分别是`Table_A`和`Table_B`，并插入两条数据。具体操作如下：
 
 ``` sql
 -- 语法：create database database_name;
@@ -89,22 +89,73 @@ SQL中JOIN用于根据两个或多个表中的列之间的关系，从这些表�
  
    LEFT JOIN 一般被译作左连接，也写作 LEFT OUTER JOIN。左连接查询会返回左表（表 A）中所有记录，不管右表（表 B）中有没有关联的数据。在右表中找到的关联数据列也会被一起返回。
    
-   ```sql
-   -- 查询语句
-   SELECT A.PK AS A_PK, B.PK AS B_PK, A.Value AS A_Value, B.Value AS B_Value
-   FROM Table_A A LEFT JOIN Table_B B
-   ON A.PK = B.PK;
+ ```sql
+ -- 查询语句
+ SELECT A.PK AS A_PK, B.PK AS B_PK, A.Value AS A_Value, B.Value AS B_Value FROM Table_A A LEFT JOIN Table_B B ON A.PK = B.PK;
 
-   -- 查询结果
-   +------+------+---------+---------+
-   | A_PK | B_PK | A_Value | B_Value |
-   +------+------+---------+---------+
-   |    1 |    1 | both ab | both ab |
-   |    2 | NULL | only a  | NULL    |
-   +------+------+---------+---------+
-   2 rows in set (0.02 sec)
-   ```
-   
+ -- 查询结果
+ +------+------+---------+---------+
+ | A_PK | B_PK | A_Value | B_Value |
+ +------+------+---------+---------+
+ |    1 |    1 | both ab | both ab |
+ |    2 | NULL | only a  | NULL    |
+ +------+------+---------+---------+
+ 2 rows in set (0.02 sec)
+ ```
+ 
+* RIGHT JOIN
+
+  RIGHT JOIN 一般被译作右连接，也写作 RIGHT OUTER JOIN。右连接查询会返回右表（表 B）中所有记录，不管左表（表 A）中有没有关联的数据。在左表中找到的关联数据列也会被一起返回。
+  
+``` sql
+-- 查询语句
+SELECT A.PK AS A_PK, B.PK AS B_PK, A.Value AS A_Value, B.Value AS B_Value FROM Table_A A RIGHT JOIN Table_B B ON A.PK = B.PK;
+
+-- 查询结果
++------+------+---------+---------+
+| A_PK | B_PK | A_Value | B_Value |
++------+------+---------+---------+
+|    1 |    1 | both ab | both ab |
+| NULL |    3 | NULL    | only b  |
++------+------+---------+---------+
+2 rows in set (0.00 sec)
+```
+
+* FULL OUTER JOIN
+  FULL OUTER JOIN 一般被译作外连接、全连接，实际查询语句中可以写作 FULL OUTER JOIN 或 FULL JOIN。外连接查询能返回左右表里的所有记录，其中左右表里能关联起来的记录被连接后返回。（注：MySQL不支持该用法）
+  
+ ``` sql
+ -- 查询语句
+SELECT A.PK AS A_PK, B.PK AS B_PK, A.Value AS A_Value, B.Value AS B_Value FROM Table_A A FULL OUTER JOIN Table_B B ON A.PK = B.PK;
+ 
+ -- 查询结果
++------+---------+------+---------+
+| PK   | Value   | PK   | Value   |
++------+---------+------+---------+
+|    1 | both ab |    1 | both ba |
+|    2 | only a  | NULL | NULL    |
+| NULL | NULL    |    3 | only b  |
++------+---------+------+---------+
+3 rows in set (0.00 sec)
+ ```
+ 
+ MySQL不支持该方法，故用其他语法模拟：
+ 
+ ```
+ -- MySQL查询
+ SELECT * FROM Table_A LEFT JOIN Table_B ON Table_A.PK = Table_B.PK UNION ALL SELECT * FROM Table_A RIGHT JOIN Table_B ON Table_A.PK = Table_B.PK WHERE Table_A.PK IS NULL;
+ 
+ -- MySQL结果
+ +------+---------+------+---------+
+| PK   | Value   | PK   | Value   |
++------+---------+------+---------+
+|    1 | both ab |    1 | both ab |
+|    2 | only a  | NULL | NULL    |
+| NULL | NULL    |    3 | only b  |
++------+---------+------+---------+
+3 rows in set (0.16 sec)
+ 
+ ```
    
    
 
