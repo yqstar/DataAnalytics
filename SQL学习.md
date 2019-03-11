@@ -1,8 +1,8 @@
 # SQL学习
 
-SQL学习网站：[SQLZOO](https://sqlzoo.net/wiki/SQL_Tutorial)
+SQL在线测试学习网站：[SQLZOO](https://sqlzoo.net/wiki/SQL_Tutorial)和[W3School-SQL](http://www.w3school.com.cn/sql/index.asp)
 
-## SQL演示数据准备
+## SQL数据准备
 
 在`MySQL`新建数据库`join_test`，在`join_test`中新建两个数据表，分别是`Table_A`和`Table_B`，并插入两条数据。具体操作如下：
 
@@ -47,7 +47,6 @@ select B.PK B_PK, B.Value B_Value from Table_B B;
 |    3 | only b  |
 +------+---------+
 2 rows in set (0.00 sec)
-
 ```
 
 ## SQL中JOIN用法概述
@@ -58,7 +57,7 @@ SQL中JOIN用于根据两个或多个表中的列之间的关系，从这些表�
 
 `Inner Join`：筛选两边都有的记录。
 
-`Left Join`:以左边的表为主表，列出主表所有记录，匹配能匹配的，不能匹配的用 NULL列出。
+`Left Join`：以左边的表为主表，列出主表所有记录，匹配能匹配的，不能匹配的用 NULL列出。
 
 `Right Join`：以右边的表为主表，列出主表所有记录，匹配能匹配的，不匹配的用NULL列出。
 
@@ -66,9 +65,31 @@ SQL中JOIN用于根据两个或多个表中的列之间的关系，从这些表�
 
 ## 常见的JOIN操作
 
+* CROSS JOIN
+  CROSS JOIN 列出两边所有组合，也称为笛卡尔集 A×B。查询示例如下。
+  
+  ``` sql
+  -- 查询语句
+  SELECT A.PK AS A_PK, B.PK AS B_PK, A.Value AS A_Value, B.Value AS B_Value
+  FROM Table_A A CROSS JOIN Table_B B;
+  
+  -- 查询结果
+  +------+------+---------+---------+
+  | A_PK | B_PK | A_Value | B_Value |
+  +------+------+---------+---------+
+  |    1 |    1 | both ab | both ab |
+  |    2 |    1 | only a  | both ab |
+  |    1 |    3 | both ab | only b  |
+  |    2 |    3 | only a  | only b  |
+  +------+------+---------+---------+
+  4 rows in set (0.08 sec)
+  ```
+
+
+
 * INNER JOIN
 
-   INNER JOIN 一般被译作内连接。内连接查询能将左表（表 A）和右表（表 B）中能关联起来的数据连接后返回。查询示例如下。
+  INNER JOIN 一般被译作内连接。内连接查询能将左表（表 A）和右表（表 B）中能关联起来的数据连接后返回。查询示例如下。
    
   ``` sql
   -- 查询语句
