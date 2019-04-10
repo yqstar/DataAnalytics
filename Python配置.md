@@ -65,3 +65,6 @@ PyQt5对于v5.11及更高版本，64位Windows轮盘不包含WebEngine模块,Spy
 ```
 pip install pyqt5==5.10.1
 ```
+
+## Qt Designer的安装方法
+https://www.2cto.com/kf/201802/720803.html
