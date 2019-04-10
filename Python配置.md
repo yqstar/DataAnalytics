@@ -7,6 +7,8 @@
     * 常见的Pypi镜像源
 * [JupyterNotebook配置](#JupyterNotebook配置)
     * 自动补全配置
+* [Spyder启动报错](#Spyder启动报错)
+    * No module named 'PyQt5.QtWebEngineWidgets' 报错
 
 
 ## Fbprophet配置
@@ -50,15 +52,16 @@ pip config set global.index-url mirror-url
 pip install jupyter_contrib_nbextensions
 ```
 ``` Python
-jupyter contrib nbextension install --user
+jupyter contrib nbextension install --
 ```
+## Spyder启动报错
 
-然后安装 nbextensions_configurator
-``` Python
-pip install jupyter_nbextensions_configurator
-```
-``` Python
-jupyter nbextensions_configurator enable --user
-```
+### No module named 'PyQt5.QtWebEngineWidgets' 报错
 
-最后重启jupyter noebook，在弹出的主页面里，能看到增加了一个Nbextensions标签页，在这个页面里，勾选Hinterland即启用了代码自动补全。 
+PyQt5对于v5.11及更高版本，64位Windows轮盘不包含WebEngine模块,Spyder会调用该模块，故会报错。
+
+解决方法：
+
+```
+pip install pyqt5==5.10.1
+```
