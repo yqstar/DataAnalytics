@@ -66,5 +66,14 @@ PyQt5对于v5.11及更高版本，64位Windows轮盘不包含WebEngine模块,Spy
 pip install pyqt5==5.10.1
 ```
 
+## 使用pd.read_csv()读csv文件时，出现如下错误：
+
+UnicodeDecodeError: ‘utf-8’ codec can’t decode byte 0xd0 in position 0: invalid continuation byte
+
+出现原因：文件不是 UTF8 编码的，而系统默认采用 UTF8 解码。解决方法是改为对应的解码方式。
+
+原文：https://blog.csdn.net/moledyzhang/article/details/78978312 
+
+
 ## Qt Designer的安装方法
 https://www.2cto.com/kf/201802/720803.html
