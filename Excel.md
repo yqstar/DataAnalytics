@@ -43,3 +43,9 @@ VLOOKUP(lookup_value,table_array,col_index_num,range_lookup)
  2、选定数据区域，添加到下方范围
 
  3、现在只需双击右下角的总计，见证奇迹的时刻到了
+ 
+ 参考：http://www.xuexila.com/excel/2010/363490.html
+ 
+ 
+ ## power query法
+ 参考：http://www.360doc.com/content/16/0803/07/30583536_580403530.shtml
