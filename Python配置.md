@@ -9,6 +9,10 @@
     * 自动补全配置
 * [Spyder启动报错](#Spyder启动报错)
     * No module named 'PyQt5.QtWebEngineWidgets' 报错
+    
+* [PyTorch安装使用](# )
+    * import torch 报错
+
 
 
 ## Fbprophet配置
@@ -77,3 +81,13 @@ UnicodeDecodeError: ‘utf-8’ codec can’t decode byte 0xd0 in position 0: in
 
 ## Qt Designer的安装方法
 https://www.2cto.com/kf/201802/720803.html
+
+# import torch出现如下报错：
+
+No module named 'numpy.core._multiarray_umath'
+
+出现原因：可能时numpy的版本过低，需要升级numpy版本。
+
+解决方案：`pip install --upgrade numpy`
+
+原文：https://www.cnblogs.com/Terrypython/p/10467859.html
