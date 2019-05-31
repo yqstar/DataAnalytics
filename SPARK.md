@@ -32,7 +32,7 @@ HDFS:冗余可靠的档案系统
 
 namenode:管理资料分片的状况以及各分片所在地。记录metadata和filesystem。
 
-### Spark核心
+### Spark核心RDD
 
 RDD为弹性分散式资料集，最基础的抽象结构，可以容忍错误并平行运行。
 
@@ -43,5 +43,16 @@ RDD的两种操作行为：转换和行动。
 任务切分-宽依赖RDD指的是各个节点之间会有操作，groupByKey,reduceByKey
 
 任务切分-窄依赖RDD指的是不需要和其他节点进行操作，map,filter
+
+### Spark元件
+
+SparkDriver，执行使用者的应用程序，建立SparkContext并且安排任务，与ClusterManager沟通。
+
+Executors,执行Driver排定的工作，执行结果存于Memory,与存储系统互动。
+
+ClusterManager,资源分配与管理。
+
+
+## 搭建Spark环境
 
 
