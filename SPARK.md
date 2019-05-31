@@ -26,4 +26,22 @@ Lambda架构划分为三层，分别是批处理层，服务层，和加速层�
 
 MapReduce:丛集资源管理及资料处理
 
+JobTracker回去和NameNode询问需要处理的资料在那儿。
+
 HDFS:冗余可靠的档案系统
+
+namenode:管理资料分片的状况以及各分片所在地。记录metadata和filesystem。
+
+### Spark核心
+
+RDD为弹性分散式资料集，最基础的抽象结构，可以容忍错误并平行运行。
+
+RDD的两种操作行为：转换和行动。
+
+转换是懒惰操作，不会实时触发。行动是实时操作，会立即执行。
+
+任务切分-宽依赖RDD指的是各个节点之间会有操作，groupByKey,reduceByKey
+
+任务切分-窄依赖RDD指的是不需要和其他节点进行操作，map,filter
+
+
