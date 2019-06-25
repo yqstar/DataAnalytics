@@ -13,7 +13,13 @@
 * [PyTorch安装使用](# )
     * import torch 报错
 
+## Pycharm配置
 
+### Pycharm的Interpreter配置
+
+### Pycharm类似于Spyder的变量查看配置
+
+单击Run按钮旁边的向下的灰色三角形；然后单击“Edit Configurations”；在出现的窗口上，勾选上：“Run with Python Console”；然后重跑脚本在右下角出现了变量的窗口，可以查看变量的值。
 
 ## Fbprophet配置
 
