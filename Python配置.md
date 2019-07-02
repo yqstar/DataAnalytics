@@ -1,6 +1,10 @@
 # Python配置
 
 ## 目录
+
+* [Anaconda配置Python2.7和Python3.6环境](#Anaconda配置Python2.7和Python3.6环境)
+* [Pycharm配置](#Pycharm配置)
+* [Pycharm的Interpreter配置](#Pycharm的Interpreter配置)
 * [Fbprophet配置](#Fbprophet配置)
 * [Pypi镜像配置](#Pypi镜像配置)
     * Pypi镜像使用
@@ -12,6 +16,10 @@
     
 * [PyTorch安装使用](# )
     * import torch 报错
+
+## Anaconda配置Python2.7和Python3.6环境
+
+参考：https://blog.csdn.net/levon2018/article/details/84316088
 
 ## Pycharm配置
 
