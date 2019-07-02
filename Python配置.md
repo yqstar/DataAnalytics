@@ -21,6 +21,13 @@
 
 参考：https://blog.csdn.net/levon2018/article/details/84316088
 
+报错：RemoveError: 'setuptools' is a dependency of conda and cannot be removed from
+conda's operating environment.
+
+原因：通过 conda list 发现，已经安装好的 setuptools 来自PyPi，并不是来自 conda-forge ，所以说明 setuptools 竟然不是用 conda 安装的，而是用 pip 安装的。
+
+解决：pip uninstall setuptools
+
 ## Pycharm配置
 
 ### Pycharm的Interpreter配置
