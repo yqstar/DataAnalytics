@@ -1,5 +1,14 @@
-import re
+# -*- coding: utf-8 -*-
 
+"""
+@author: AndrewYq
+
+@Email: hfyqstar@163.com
+
+@Date：2019/08/06
+"""
+
+import re
 import collections
 
 '''
@@ -13,6 +22,7 @@ argmaxc, 用来枚举所有可能的 c 并且选取概率最大的
 # 把语料中的单词全部抽取出来, 转成小写, 并且去除单词中间的特殊符号
 def words(text):
     return re.findall('[a-z]+', text.lower())
+
 
 '''
 要是遇到我们从来没有过见过的新词怎么办. 
@@ -55,8 +65,8 @@ def edits1(word):
 优化:在这些编辑距离小于2的词中间, 只把那些正确的词作为候选词,只能返回 3 个单词: ‘smoothing’, ‘something’ 和 ‘soothing’
 '''
 
-#返回所有与单词 w 编辑距离为 2 的集合
-#在这些编辑距离小于2的词中间, 只把那些正确的词作为候选词
+# 返回所有与单词 w 编辑距离为 2 的集合
+# 在这些编辑距离小于2的词中间, 只把那些正确的词作为候选词
 def edits2(word):
     return set(e2 for e1 in edits1(word) for e2 in edits1(e1))
 
@@ -64,13 +74,17 @@ def edits2(word):
 正常来说把一个元音拼成另一个的概率要大于辅音 (因为人常常把 hello 打成 hallo 这样); 把单词的第一个字母拼错的概率会相对小, 等等.
 但是为了简单起见, 选择了一个简单的方法: 编辑距离为1的正确单词比编辑距离为2的优先级高, 而编辑距离为0的正确单词优先级比编辑距离为1的高.
 '''
+
+
 def known(words):
     return set(w for w in words if w in NWORDS)
+
 
 # 如果known(set)非空, candidate 就会选取这个集合, 而不继续计算后面的
 def correct(word):
     candidates = known([word]) or known(edits1(word)) or known(edits2(word)) or [word]
     return max(candidates, key=lambda w: NWORDS[w])
 
-#appl #appla #learw #tess #morw
+
+# appl # appla # learw # tess # morw
 print(correct('appla'))
