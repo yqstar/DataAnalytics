@@ -1,9 +1,9 @@
-feature_dict={i:label for i,lable in zip(
+feature_dict={i:label for i,label in zip(
 range(4),
 ('sepal length [cm]',
 'sepal width [cm]',
 'petal length [cm]',
-'petal width [cm]',))}
+'petal width [cm]'))}
 
 import pandas as pd
 
@@ -12,4 +12,8 @@ df = pd.io.parsers.read_csv(
     header=None, 
     sep=',')
 
-df.columns = []
+df.columns = [l for i,l in sorted(feature_dict.items())]+['class label']
+
+df.dropna(how="all",inplace=True)
+
+df.tail()
