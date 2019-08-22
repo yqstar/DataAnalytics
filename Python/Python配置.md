@@ -112,3 +112,11 @@ No module named 'numpy.core._multiarray_umath'
 解决方案：`pip install --upgrade numpy`
 
 原文：https://www.cnblogs.com/Terrypython/p/10467859.html
+
+# Pycharm console打开报错：
+
+Couldn’t connect to console process
+
+出现原因：系统的python环境和ipython冲突,通过pip list可以查看当前系统的python模块
+
+解决方案：https://www.lizenghai.com/archives/3603.html
