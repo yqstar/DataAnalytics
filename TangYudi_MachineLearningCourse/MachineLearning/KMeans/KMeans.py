@@ -10,6 +10,9 @@
 @Purpose: KMeans and DBSCAN Demos
 """
 
+import sys
+import os
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -19,13 +22,19 @@ from sklearn.preprocessing import StandardScaler
 from sklearn import metrics
 from sklearn.cluster import DBSCAN
 
+
+# 获取当前执行的Python脚本路径, os.getcwd()
+base_path = os.path.abspath(os.path.dirname(sys.argv[0]))
+# 拼接获得最后数据所在文件路径
+data_path = base_path + "\\" + "data.txt"
 # 加载数据
-beer_data = pd.read_csv("TangYudi_MachineLearningCourse\\MachineLearning\\Clustering\\data.txt", sep=' ')
+beer_data = pd.read_csv(data_path, sep=' ')
+print(beer_data.head(n=5))
 
-print(beer_data.head(n=6))
-
+# Creating the Training DataSet
 X = beer_data[["calories", "sodium", "alcohol", "cost"]]
 
+# Training the KMeans model
 km = KMeans(n_clusters=3).fit(X)
 km2 = KMeans(n_clusters=2).fit(X)
 
@@ -35,7 +44,6 @@ beer_data['cluster'] = km.labels_
 beer_data['cluster2'] = km2.labels_
 
 print(beer_data.sort_values('cluster'))
-
 
 
 cluster_centers = km.cluster_centers_
@@ -52,12 +60,11 @@ centers = beer_data.groupby("cluster").mean().reset_index()
 plt.rcParams["font.size"] = 14
 
 
-
 plt.figure()
-colors = np.array(["red","green","blue","yellow"])
+colors = np.array(["red", "green", "blue", "yellow"])
 
 plt.scatter(beer_data["calories"], beer_data["alcohol"], c=colors[beer_data["cluster"]])
-plt.scatter(centers.calories,centers.alcohol,linewidths=3,marker='+',s=300,c='black')
+plt.scatter(centers.calories, centers.alcohol, linewidths=3, marker='+', s=300, c='black')
 
 plt.xlabel("calories")
 plt.ylabel("alcohol")
@@ -81,11 +88,9 @@ km_scale = KMeans(n_clusters=3).fit(X_scaled)
 beer_data["scaled_cluster"]=km_scale.labels_
 
 print(beer_data.sort_values("scaled_cluster"))
-
 print(beer_data.groupby("scaled_cluster").mean())
 
 # 聚类评估，轮廓系数
-
 
 score_scaled = metrics.silhouette_score(X, beer_data.scaled_cluster)
 score = metrics.silhouette_score(X, beer_data.cluster)
