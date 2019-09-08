@@ -7,7 +7,7 @@
 
 @Date: 2019/08/06
 
-@Purpose: KMeans and DBSCAN Demos
+@Purpose: Clustering and DBSCAN Demos
 """
 
 import sys
@@ -34,7 +34,7 @@ print(beer_data.head(n=5))
 # Creating the Training DataSet
 X = beer_data[["calories", "sodium", "alcohol", "cost"]]
 
-# Training the KMeans model
+# Training the Clustering model
 km = KMeans(n_clusters=3).fit(X)
 km2 = KMeans(n_clusters=2).fit(X)
 
