@@ -2,6 +2,12 @@
 
 SQL在线测试学习网站： [SQLZOO](https://sqlzoo.net/wiki/SQL_Tutorial) 和 [W3School-SQL](http://www.w3school.com.cn/sql/index.asp)
 
+## 使用sql语句统计重复某个字段出现重复次数
+
+```
+select mark_name ,COUNT(0) AS 重复数据 FROM livemark GROUP BY mark_name HAVING COUNT(mark_name)>1
+```
+
 ## SQL数据准备
 
 在`MySQL`新建数据库`join_test`，在`join_test`中新建两个数据表，分别是`Table_A`和`Table_B`，并插入两条数据。具体操作如下：
