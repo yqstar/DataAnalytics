@@ -2,6 +2,62 @@
 
 SQL在线测试学习网站： [SQLZOO](https://sqlzoo.net/wiki/SQL_Tutorial) 和 [W3School-SQL](http://www.w3school.com.cn/sql/index.asp)
 
+## CASE WHEN函数的使用
+
+https://www.cnblogs.com/lsgsanxiao/p/10897613.html
+
+## 取出某字段中的最大值和最小值
+
+数据库表test信息
+
++------+-------+--------------------------------------+
+| id     | rev   | content                            |
++------+-------+--------------------------------------+
+| id1    | 1     | ...                                |
+| id2    | 1     | ...                                |
+| id1    | 2     | ...                                |
+| id2    | 3     | ...                                |
++------+-------+--------------------------------------+
+
+### 取出某字段最大或者最小值的记录
+
+取出最小值的记录
+
+```
+select id,min(rev) as test_select from test group by id
+```
+
+取出最大值的记录
+
+```
+select id,max(rev) as test_select from test group by id
+```
+
+取出最大值和最小值的记录
+```
+select id,min(rev) as test_select from test group by id
+union
+select id,max(rev) as test_select from test group by id
+```
+
+取出最大值和最小值的所有字段记录信息
+
+```
+SELECT a.id, a.rev,a.contents
+FROM test a
+INNER JOIN (
+select id,min(rev) as test_select from test group by id
+union
+select id,max(rev) as test_select from test group by id
+) b ON a.id = b.id and a.rev = b.rev;
+```
+
+## 使用sql语句统计重复某个字段出现重复次数
+
+```
+select mark_name ,COUNT(0) AS 重复数据 FROM livemark GROUP BY mark_name HAVING COUNT(mark_name)>1
+```
+
 ## SQL数据准备
 
 在`MySQL`新建数据库`join_test`，在`join_test`中新建两个数据表，分别是`Table_A`和`Table_B`，并插入两条数据。具体操作如下：
