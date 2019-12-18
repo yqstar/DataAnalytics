@@ -2,6 +2,10 @@
 
 SQL在线测试学习网站： [SQLZOO](https://sqlzoo.net/wiki/SQL_Tutorial) 和 [W3School-SQL](http://www.w3school.com.cn/sql/index.asp)
 
+## CASE WHEN函数的使用
+
+https://www.cnblogs.com/lsgsanxiao/p/10897613.html
+
 ## 取出某字段中的最大值和最小值
 
 数据库表test信息
