@@ -2,6 +2,51 @@
 
 SQL在线测试学习网站： [SQLZOO](https://sqlzoo.net/wiki/SQL_Tutorial) 和 [W3School-SQL](http://www.w3school.com.cn/sql/index.asp)
 
+## 取出某字段中的最大值和最小值
+
+数据库表test信息
+
++------+-------+--------------------------------------+
+| id     | rev   | content                              |
++------+-------+--------------------------------------+
+| id1    | 1     | ...                                  |
+| id2    | 1     | ...                                  |
+| id1    | 2     | ...                                  |
+| id2    | 3     | ...                                  |
++------+-------+--------------------------------------+
+### 取出某字段最大或者最小值的记录
+
+取出最小值的记录
+
+```
+select id,min(rev) as test_select from test group by id
+```
+
+取出最大值的记录
+
+```
+select id,max(rev) as test_select from test group by id
+```
+
+取出最大值和最小值的记录
+```
+select id,min(rev) as test_select from test group by id
+union
+select id,max(rev) as test_select from test group by id
+```
+
+取出最大值和最小值的所有字段记录信息
+
+```
+SELECT a.id, a.rev,a.contents
+FROM test a
+INNER JOIN (
+select id,min(rev) as test_select from test group by id
+union
+select id,max(rev) as test_select from test group by id
+) b ON a.id = b.id and a.rev = b.rev;
+```
+
 ## 使用sql语句统计重复某个字段出现重复次数
 
 ```
