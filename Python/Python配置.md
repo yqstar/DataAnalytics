@@ -17,6 +17,9 @@
 * [PyTorch安装使用](# )
     * import torch 报错
 
+* [生成requirements.txt文件](#生成requirements.txt文件)
+    * 生成requirements.txt文件
+
 ## Anaconda配置Python2.7和Python3.6环境
 
 参考：https://blog.csdn.net/levon2018/article/details/84316088
@@ -120,3 +123,16 @@ Couldn’t connect to console process
 出现原因：系统的python环境和ipython冲突,通过pip list可以查看当前系统的python模块
 
 解决方案：https://www.lizenghai.com/archives/3603.html
+
+# 生成requirements.txt文件
+
+生成requirements.txt文件
+
+```
+pip freeze > requirements.txt
+```
+安装requirements.txt依赖
+
+```
+pip install -r requirements.txt
+```
