@@ -1,4 +1,5 @@
 import tensorflow as tf
+import torch
 
 a = 3
 
@@ -12,3 +13,5 @@ init_op = tf.global_variables_initializer()
 with tf.Session() as sess:
     sess.run(init_op)
     print(y.eval())
+
+torch.hann_window
