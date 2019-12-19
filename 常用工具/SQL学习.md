@@ -2,6 +2,46 @@
 
 SQL在线测试学习网站： [SQLZOO](https://sqlzoo.net/wiki/SQL_Tutorial) 和 [W3School-SQL](http://www.w3school.com.cn/sql/index.asp)
 
+## Hive对DataBase和Table的创建
+
+https://blog.csdn.net/Thomson617/article/details/86153924
+
+https://blog.csdn.net/xiaozelulu/article/details/81585867
+
+## 如何根据现有的表创建新的表
+
+Hive:
+
+https://blog.csdn.net/lzw2016/article/details/97811799
+
+Sql Server ：
+```
+select * into table_new from table_old ; 复制结构和数据
+select * into table_new from table_old where 1=2;只复制结构
+```
+
+Oracle：
+```
+create table table_new as select * from table_old;复制结构和数据
+create table table_new as select * from table_old where 1=0;只复制结构
+```
+
+DB2：
+```
+--复制表结构
+create table table_name_new as (select * from table_name_old) definition only;
+--插入数据
+insert into table_name_new （select * from table_name_old);
+```
+
+MySql：
+```
+----- 复制表结构及数据到新表
+CREATE TABLE 新表 SELECT * FROM 旧表
+----- 只复制表结构到新表
+CREATE TABLE 新表 SELECT * FROM 旧表 WHERE 1=2
+```
+
 ## CASE WHEN函数的使用
 
 https://www.cnblogs.com/lsgsanxiao/p/10897613.html
