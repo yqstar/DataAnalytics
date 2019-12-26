@@ -2,6 +2,10 @@
 
 SQL在线测试学习网站： [SQLZOO](https://sqlzoo.net/wiki/SQL_Tutorial) 和 [W3School-SQL](http://www.w3school.com.cn/sql/index.asp)
 
+## delete、truncate、drop的区别
+
+https://blog.csdn.net/lilamei170607/article/details/88843859
+
 ## Hive对DataBase和Table的创建
 
 https://blog.csdn.net/Thomson617/article/details/86153924
